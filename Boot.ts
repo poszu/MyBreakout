@@ -6,8 +6,10 @@ module Breakout {
         step = Math.PI / 360;
 
         preload() {
-            this.load.image('breakout_logo', 'assets/breakout.png');
-            this.load.image('level1_background', 'assets/background1.jpg');
+            this.load.image("breakout_logo", "assets/breakout.png");
+            this.load.image("brick", "assets/break.png");
+            this.load.image("ball", "assets/ball.gif");
+            this.load.image("level1_background", "assets/background1.jpg");
         }
 
         create() {
@@ -16,13 +18,14 @@ module Breakout {
             //  Phaser will automatically pause if the browser tab the game is in loses focus. You can disable that here:
             this.stage.disableVisibilityChange = true;
             if (this.game.device.desktop) {
+
                 //  If you have any desktop specific settings, they can go in here
                 // this.stage.scale. pageAlignHorizontally = true;
             }
             else {
                 //  Same goes for mobile settings.
             }
-            this.logo = this.add.sprite(0, 0, 'breakout_logo');
+            this.logo = this.add.sprite(0, 0, "breakout_logo");
 
             this.logo.x = this.game.width / 2;
             this.logo.anchor.x = this.logo.anchor.y = 0.5;
@@ -45,7 +48,7 @@ module Breakout {
 
         startGame()
         {
-            this.game.state.start('Level1', true, false);
+            this.game.state.start("Level1", true, false);
         }
     }
 }
